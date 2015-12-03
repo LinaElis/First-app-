@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3Contacts.Page2">
+  <ContentPage.Content>
+    <StackLayout Padding="30">
+      <Label Text="Contacts" FontSize="30"></Label>
+
+      <ListView x:Name="ContactList" ItemsSource="{Binding Contacts}" ItemTapped="ContactList_OnItemTapped">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout>
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding FirstName}" FontSize="20"></Label>
+                    <Label Text="{Binding LastName}" FontSize="20"></Label>
+                  </StackLayout>
+                  <Label Text="{Binding Email}" FontSize="12"></Label>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
